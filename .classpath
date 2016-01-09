@@ -6,7 +6,7 @@
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/resources"/>
-	<classpathentry kind="var" path="M2_REPO/pucminas/asd/tcc/canonicoserv/1.1.1/canonicoserv-1.1.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/pucminas/asd/tcc/canonicoserv/1.1.2/canonicoserv-1.1.2.jar"/>
 	<classpathentry kind="lib" path="postgresql-9.4-1206-jdbc42.jar"/>
 	<classpathentry kind="lib" path="activemq-broker-5.8.0.jar"/>
 	<classpathentry kind="lib" path="activemq-client-5.8.0.jar"/>

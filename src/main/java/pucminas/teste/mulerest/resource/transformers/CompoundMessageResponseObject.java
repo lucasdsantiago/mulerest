@@ -3,6 +3,7 @@ import org.mule.api.MuleMessage;
 import org.mule.api.transformer.TransformerException;
 import org.mule.transformer.AbstractMessageTransformer;
 
+import pucminas.asd.tcc.canonicoserv.Bem;
 import pucminas.asd.tcc.canonicoserv.Declaracao;
 import pucminas.teste.mulerest.resource.modelo.MessageResponse;
 
@@ -25,7 +26,7 @@ public class CompoundMessageResponseObject extends AbstractMessageTransformer {
 			//nomeServidor = message.getInvocationProperty("nomeServidor");
 			nomeServidor = declaracao.getAgente().getCpf();
 			//bemDeclarado = message.getInvocationProperty("bemDeclarado");
-			bemDeclarado = declaracao.getBemDeclarado();
+			bemDeclarado = ((Bem)declaracao.getBens().get(0)).getNome();
 			declaracaoNumber = message.getInvocationProperty("declaracaoNumber");
 			date = message.getInvocationProperty("date");
 		} catch (Exception e) {

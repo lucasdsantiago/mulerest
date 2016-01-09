@@ -10,8 +10,9 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 http://www.mulesoft.org/schema/mule/ee/jdbc http://www.mulesoft.org/schema/mule/ee/jdbc/current/mule-jdbc-ee.xsd
 http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
     <jdbc-ee:postgresql-data-source name="PostgreSQL_DB_PRODABEL" user="postgres" password="postgres" url="jdbc:postgresql://localhost:5433/rh-prodabel" transactionIsolation="UNSPECIFIED" doc:name="PostgreSQL Data Source"></jdbc-ee:postgresql-data-source>
-    <jdbc-ee:connector name="GEE-DB-PRODABEL" dataSource-ref="PostgreSQL_DB_PRODABEL" validateConnections="true" queryTimeout="-1" pollingFrequency="0" doc:name="Database"> 
-        <jdbc-ee:query key="LOGIN" value="SELECT NOME FROM SERVIDOR_PRODABEL WHERE CPF = #[flowVars['cpf']] AND SENHA = #[flowVars['senha']]"></jdbc-ee:query>  
+    <jdbc-ee:connector name="GEE-DB-PRODABEL" dataSource-ref="PostgreSQL_DB_PRODABEL" validateConnections="true" queryTimeout="-1" pollingFrequency="0" doc:name="Database">
+        <jdbc-ee:query key="LOGIN" value="SELECT NOME, EMAIL FROM SERVIDOR_PRODABEL WHERE CPF = #[flowVars['cpf']] AND SENHA = #[flowVars['senha']]"/>
+  
     </jdbc-ee:connector>
     <jms:activemq-connector name="Active_MQ_Confirmacao_Declaracao" brokerURL="tcp://localhost:61616" validateConnections="true" doc:name="Active MQ"></jms:activemq-connector>
     <flow name="FluxoEnviarEmailConfirmacao" doc:name="FluxoEnviarEmailConfirmacao"> 
